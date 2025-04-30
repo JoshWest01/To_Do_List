@@ -58,4 +58,15 @@ if __name__=="__main__":
     main()
 
 def save_tasks(tasks)
-    with open
+    with open("tasks.txt", "w") as f:
+              for task in tasks:
+                f.write(task + '\n')
+
+def load_task():
+    try:
+        with open("tasks.txt", "r") as f:
+            return f.read().splitlines()
+    except FileNotFoundError:
+        return[]
+
+
